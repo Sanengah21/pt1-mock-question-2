@@ -10,6 +10,12 @@ Time::Time(int hours_in, int mins_in)
 	
 }
 
+ostream &operator <<(ostream &output, Time &t){
+	output << setw(2) << setfill('0') << t.hours;
+	output << setw(2) << setfill('0') << t.minutes;
+	return output;
+}
+
 void Time::set(int hours_in, int mins_in)
 {
 	if ((hours_in >= 0 && hours_in < 24) && (mins_in >= 0 && mins_in < 60)){
